@@ -174,7 +174,7 @@ function startServer(dir, config, httpServer) {
     },
     normalizeFilename: function(name) {
       var pt = path.resolve(dir, name)
-      try { pt = fs.realPathSync(path.resolve(dir, name), true) }
+      try { pt = fs.realpathSync(path.resolve(dir, name)) }
       catch(e) {}
       return path.relative(dir, pt)
     },
